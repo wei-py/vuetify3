@@ -15,7 +15,7 @@
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "vue": "^3.2.41",
-    "vue-router": "4.0.0",
+    "vue-router": "^4.0.13",
     "vuetify": "npm:@vuetify/nightly@next",
     "webfontloader": "^1.0.0"
   },
