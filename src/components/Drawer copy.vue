@@ -1,50 +1,58 @@
 <template>
-  <v-navigation-drawer
-    :rail="rail"
-    @pointerenter="rail = false"
-    @pointerleave="rail = true"
-    @click="showOpen"
-  >
-    <v-list elevation="1">
+  <v-navigation-drawer rail rail-width="200">
+    <!-- :rail="drawer.rail" -->
+    <!-- @pointerenter="drawer.setFalse"
+    @pointerleave="drawer.setTrue" -->
+    <!-- <v-list elevation="1" nav>
       <v-list-item
         density="comfortable"
         title="Linya"
         subtitle="sandra_a88@gmailcom"
         :prepend-avatar="avatar"
       />
-    </v-list>
+    </v-list> -->
 
     <!-- <v-divider /> -->
 
     <!-- v-list -->
-    <v-list>
-      <v-list-item prepend-icon="mdi-home" title="Home" value="Home"></v-list-item>
-
-      <v-list-group>
-        <template v-slot:activator="{ props }">
-          <v-list-item
-            v-bind="props"
-            prepend-icon="mdi-account-circle"
-            title="Users"
-          ></v-list-item>
-        </template>
-
-        <v-list-item v-bind="props" value="Admin" title="Admin"></v-list-item>
-      </v-list-group>
+    <v-list density="compact" nav>
+      <v-list-item
+        density="comfortable"
+        title="Linya"
+        subtitle="8888@gmailcom"
+        :prepend-avatar="avatar"
+      />
+      <v-list-item
+        v-for="m in menu"
+        :title="m.title"
+        :value="m.href"
+        :key="m.title"
+        @click="menuClick(m)"
+      />
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { avatar } from "@/src/assets/href.js";
+import { avatar, menu, menuGroup } from "@/src/assets/href.js";
+import { useBreadStore } from "@/src/store/bread";
+import { userDrawder } from "@/src/store/drawer";
 
-const rail = ref(true);
+const { leftBread, rightBread } = useBreadStore();
+const drawer = userDrawder();
 
-const open = ref("Users");
-function showOpen() {
-  console.log(open.value, 1111);
-}
+const menuClick = (m) => {
+  leftBread.length = 0;
+  if (Reflect.has(menuGroup, m.title)) {
+    leftBread.push(...menuGroup[m.title]);
+  }
+  console.log(leftBread);
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+::v-deep .v-list-item-title {
+  text-align: center;
+}
+</style>

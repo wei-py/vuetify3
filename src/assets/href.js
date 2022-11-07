@@ -4,21 +4,25 @@ export const menu = [
   {
     title: "供应商",
     disabled: false,
+    icon: "",
     // href: "breadcrumbs_dashboard",
   },
   {
     title: "库存",
     disabled: false,
+    icon: "",
     // href: "breadcrumbs_link_1",
   },
   {
     title: "价格",
     disabled: false,
+    icon: "",
     // href: "breadcrumbs_link_2",
   },
   {
     title: "链接",
     disabled: false,
+    icon: "",
     // href: "breadcrumbs_link_3",
   },
 ];

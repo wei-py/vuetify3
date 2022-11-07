@@ -1,8 +1,9 @@
 <template>
   <v-navigation-drawer
     :rail="drawer.rail"
-    @pointerenter="drawer.switch"
-    @pointerleave="drawer.switch"
+    :permanent="!drawer.rail"
+    @mouseenter="drawer.setFalse"
+    @mouseleave="drawer.setTrue"
   >
     <v-list elevation="1" nav>
       <v-list-item
@@ -34,16 +35,16 @@ import { avatar, menu, menuGroup } from "@/src/assets/href.js";
 import { useBreadStore } from "@/src/store/bread";
 import { userDrawder } from "@/src/store/drawer";
 
-const {leftBread, rightBread} = useBreadStore();
+const { leftBread, rightBread } = useBreadStore();
 const drawer = userDrawder();
 
 const menuClick = (m) => {
   leftBread.length = 0;
   if (Reflect.has(menuGroup, m.title)) {
-    leftBread.push(...menuGroup[m.title])
+    leftBread.push(...menuGroup[m.title]);
   }
   console.log(leftBread);
-}
+};
 </script>
 
 <style lang="scss" scoped>

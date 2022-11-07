@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { throttle } from 'lodash'
 
 export const userDrawder = defineStore('drawer', {
   // 其它配置项
@@ -17,6 +16,6 @@ export const userDrawder = defineStore('drawer', {
     },
     switch() {
       this.rail = !this.rail
-    }
+    },
   }
 })
