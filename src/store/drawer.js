@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { throttle } from 'lodash'
 
 export const userDrawder = defineStore('drawer', {
   // 其它配置项

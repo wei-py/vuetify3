@@ -1,10 +1,10 @@
 <template>
   <v-navigation-drawer
     :rail="drawer.rail"
-    @pointerenter="drawer.switch()"
-    @pointerleave="drawer.switch()"
+    @pointerenter="drawer.switch"
+    @pointerleave="drawer.switch"
   >
-    <v-list elevation="1">
+    <v-list elevation="1" nav>
       <v-list-item
         density="comfortable"
         title="Linya"
