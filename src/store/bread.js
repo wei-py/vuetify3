@@ -4,7 +4,8 @@ export const useBreadStore = defineStore('bread', {
   // 其它配置项
   state() {
     return {
-      process: []
+      leftBread: [],
+      rightBread: [],
     }
   },
   actions() {

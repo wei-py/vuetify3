@@ -1,22 +1,32 @@
-export const avatar =
-  "https://avatars.githubusercontent.com/u/78292849?s=400&u=f5332259f23ce3aaf7bb0ccdcb14c6eaf09aa34a&v=4";
+export const avatar = "https://avatars.githubusercontent.com/u/78292849";
+
 export const menu = [
   {
-    title: "Dashboard",
+    title: "供应商",
     disabled: false,
-    href: "breadcrumbs_dashboard",
+    // href: "breadcrumbs_dashboard",
   },
   {
-    title: "Link 1",
+    title: "库存",
     disabled: false,
-    href: "breadcrumbs_link_1",
+    // href: "breadcrumbs_link_1",
   },
   {
-    title: "Link 2",
-    disabled: true,
-    href: "breadcrumbs_link_2",
+    title: "价格",
+    disabled: false,
+    // href: "breadcrumbs_link_2",
+  },
+  {
+    title: "链接",
+    disabled: false,
+    // href: "breadcrumbs_link_3",
   },
 ];
+
+export const menuGroup = {
+  供应商: ["供应商1", "供应商2", "供应商3"],
+  库存: ["预估库存", "预留库存", "实际库存"],
+};
 
 export const bread = {
   density: "comfortable",
